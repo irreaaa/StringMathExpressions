@@ -1,0 +1,14 @@
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\bin\Debug\net8.0\StringsMathExpressions.exe
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\bin\Debug\net8.0\StringsMathExpressions.deps.json
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\bin\Debug\net8.0\StringsMathExpressions.runtimeconfig.json
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\bin\Debug\net8.0\StringsMathExpressions.dll
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\bin\Debug\net8.0\StringsMathExpressions.pdb
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.AssemblyInfoInputs.cache
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.AssemblyInfo.cs
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.csproj.CoreCompileInputs.cache
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.dll
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\refint\StringsMathExpressions.dll
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.pdb
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\StringsMathExpressions.genruntimeconfig.cache
+C:\Users\irisp\source\repos\StringsMathExpressions\StringsMathExpressions\obj\Debug\net8.0\ref\StringsMathExpressions.dll
