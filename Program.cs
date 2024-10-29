@@ -14,8 +14,7 @@ string expression = Console.ReadLine();
 try
 {
     expression = expression.Replace(" ", "");
-    string[] strings = expression.Split(new Char[] { '+', '-' });
-    //Console.WriteLine("[{0}]", string.Join(", ", strings));
+    string[] strings = expression.Split('+','-');
     string[] result = new string[strings.Length];
 
     for (int i = 0; i < strings.Length; i++)
@@ -26,33 +25,26 @@ try
         }
         else
         {
-            string[] split = strings[i].Split(new Char[] { '*', '/' });
+            string[] split = strings[i].Split('*', '/');
             List<string> znaki = new List<string>();
-            foreach (string znak in strings)
+            for (int k = 0; k < strings[i].Length; k++)
             {
-                if (znak == "+" || znak == "-")
+                if (strings[i][k] == '*' || strings[i][k] == '/')
                 {
-                    znaki.Add(znak);
+                    znaki.Add(strings[i][k].ToString());
                 }
             }
 
             double result1 = double.Parse(split[0]);
-            for (int j = 1; j < znaki.Count() + 1; j++)
+            for (int j = 1; j < split.Length; j++)
             {
-                if (strings[i].Length == 1)
-                {
-                    result[i] = strings[i];
-                    break;
-                }
                 if (znaki[j - 1] == "*")
                 {
-                    result[i] = (result1 * double.Parse(split[j])).ToString();
-                    result1 = result1 * double.Parse(split[j]);
+                    result1 *= double.Parse(split[j]);
                 }
                 if (znaki[j - 1] == "/")
                 {
-                    result[i] = (result1 / double.Parse(split[j])).ToString();
-                    result1 = result1 / double.Parse(split[j]);
+                    result1 /= double.Parse(split[j]);
                 }
             }
             result[i] = result1.ToString();
@@ -61,22 +53,23 @@ try
 
     double j1 = double.Parse(result[0]);
     List<string> znaki1 = new List<string>();
-    foreach (string znak in strings)
+    for (int i = 0; i < expression.Length; i++)
     {
-        if (znak == "+" || znak == "-")
+        if (expression[i] == '+' || expression[i] == '-')
         {
-            znaki1.Add(znak);
+            znaki1.Add(expression[i].ToString());
         }
     }
+
     for (int i = 1; i < result.Length; i++)
     {
         if (znaki1[i - 1] == "+")
         {
-            j1 = j1 + double.Parse(result[i]);
+            j1 += double.Parse(result[i]);
         }
         if (znaki1[i - 1] == "-")
         {
-            j1 = j1 - double.Parse(result[i]);
+            j1 -= double.Parse(result[i]);
         }
     }
     Console.WriteLine($"Результат: {j1}");
