@@ -1,254 +1,92 @@
-﻿//using Microsoft.VisualBasic;
-//using System;
-//using System.Text;
-//using static System.Net.Mime.MediaTypeNames;
-////StreamWriter vvod = new StreamWriter("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod.txt");
-//Console.WriteLine("Введите математическое выражение: ");
-//string expression = Console.ReadLine();
-////vvod.Close();
-////StreamWriter vyvod = new StreamWriter("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vyvod.txt");
-////StreamReader vvod1 = new StreamReader("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod1.txt");
-//try
-//{
-//    expression = expression.Replace(" ", "");
-//    char[] operators = "*/+-".ToCharArray();
-//    char[] digitals = "0123456789".ToCharArray();
-//    int[] priorities = new[] { 0, 0, 1, 1 };
-
-//    List<char> opers = new List<char>();
-//    List<double> numbers = new List<double>();
-
-//    string[] parts = expression.Split(digitals, StringSplitOptions.RemoveEmptyEntries);
-//    foreach (string part in parts)
-//    {
-//        if (part.Length > 0)
-//        {
-//            char op = part[0];
-//            opers.Add(part[0]);
-//            int index = expression.IndexOf(op);
-//            Console.WriteLine($"Знак {part} имеет индекс {index}");
-//        }
-//    }
-
-//    parts = expression.Split(operators, StringSplitOptions.RemoveEmptyEntries);
-//    foreach (string part in parts)
-//    {
-//        if (int.TryParse(part, out int number))
-//        {
-//            numbers.Add(number);
-//        }
-//    }
-
-//    if (opers.Count + 1 != numbers.Count)
-//    {
-//        Console.WriteLine("Некорректное выражение");
-//        return;
-//    }
-
-//    List<int> uniquePriorities = new List<int>();
-//    foreach (int priority in priorities)
-//    {
-//        if (!uniquePriorities.Contains(priority))
-//        {
-//            uniquePriorities.Add(priority);
-//        }
-//    }
-
-//    foreach (int priority in uniquePriorities)
-//    {
-//        List<char> nowOpers = new List<char>();
-//        for (int i = 0; i < priorities.Length; i++)
-//        {
-//            if (priorities[i] == priority)
-//                nowOpers.Add(operators[i]);
-//        }
-//        for (int i = 0; i < opers.Count; i++)
-//        {
-//            if (operators.Contains(opers[i]))
-//            {
-//                numbers[i] = opers[i] switch
-//                {
-//                    '*' => numbers[i] * numbers[i + 1],
-//                    '/' => numbers[i] / numbers[i + 1],
-//                    '+' => numbers[i] + numbers[i + 1],
-//                    '-' => numbers[i] - numbers[i + 1],
-//                    _ => throw new NotSupportedException("Неподдерживаемый оператор")
-//                };
-//                numbers.RemoveAt(i + 1);
-//                opers.RemoveAt(i);
-//                i--;
-//            }
-//        }
-//        Console.WriteLine($"Результат: {numbers[0]}");
-//    }
-//    //vyvod.Close();
-//    //vvod1.Close();
-//}
-//catch (Exception ex)
-//{
-//    Console.WriteLine("ошибка");
-//}
-
-//Console.ReadKey();
-
-
-
-
-
-
-
-
-
-
-
-
+﻿using Microsoft.VisualBasic;
 using System;
-using System.Collections.Generic;
-
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+//StreamWriter vvod = new StreamWriter("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod.txt");
 Console.WriteLine("Введите математическое выражение: ");
 string expression = Console.ReadLine();
-
+//vvod.Close();
+//StreamWriter vyvod = new StreamWriter("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vyvod.txt");
+//StreamReader vvod1 = new StreamReader("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod1.txt");
 try
 {
     expression = expression.Replace(" ", "");
-    char[] operators = "*/+-".ToCharArray();
-    int[] priorities = new[] { 1, 1, 0, 0 };
+    string[] strings = expression.Split(new Char[] { '+', '-' });
+    //Console.WriteLine("[{0}]", string.Join(", ", strings));
+    string[] result = new string[strings.Length];
 
-    List<char> opers = new List<char>();
-    List<int> numbers = new List<int>();
-
-    for (int i = 0; i < expression.Length; i++)
+    for (int i = 0; i < strings.Length; i++)
     {
-        char currentChar = expression[i];
-        if (Array.Exists(operators, op => op == currentChar))
+        if (strings[i].Length == 1)
         {
-            opers.Add(currentChar);
+            result[i] = strings[i];
         }
-        else if (char.IsDigit(currentChar))
+        else
         {
-            int number = 0;
-            while (i < expression.Length && char.IsDigit(expression[i]))
+            string[] split = strings[i].Split(new Char[] { '*', '/' });
+            List<string> znaki = new List<string>();
+            foreach (string znak in strings)
             {
-                number = number * 10 + (expression[i] - '0');
-                i++;
-            }
-            numbers.Add(number);
-            i--; 
-        }
-    }
-
-    if (opers.Count + 1 != numbers.Count)
-    {
-        Console.WriteLine("Некорректное выражение");
-        return;
-    }
-
-    foreach (int p in new[] { 1, 0 }) 
-    {
-        for (int i = 0; i < opers.Count;)
-        {
-            char op = opers[i];
-            int opIndex = Array.IndexOf(operators, op);
-            if (opIndex >= 0 && priorities[opIndex] == p)
-            {
-                int left = numbers[i];
-                int right = numbers[i + 1];
-                int result = op switch
+                if (znak == "+" || znak == "-")
                 {
-                    '*' => left * right,
-                    '/' => left / right,
-                    '+' => left + right,
-                    '-' => left - right,
-                    _ => throw new NotSupportedException("Неподдерживаемый оператор")
-                };
+                    znaki.Add(znak);
+                }
+            }
 
-                numbers[i] = result;
-                numbers.RemoveAt(i + 1);
-                opers.RemoveAt(i);
-            }
-            else
+            double result1 = double.Parse(split[0]);
+            for (int j = 1; j < znaki.Count() + 1; j++)
             {
-                i++;
+                if (strings[i].Length == 1)
+                {
+                    result[i] = strings[i];
+                    break;
+                }
+                if (znaki[j - 1] == "*")
+                {
+                    result[i] = (result1 * double.Parse(split[j])).ToString();
+                    result1 = result1 * double.Parse(split[j]);
+                }
+                if (znaki[j - 1] == "/")
+                {
+                    result[i] = (result1 / double.Parse(split[j])).ToString();
+                    result1 = result1 / double.Parse(split[j]);
+                }
             }
+            result[i] = result1.ToString();
         }
     }
 
-    Console.WriteLine($"Результат: {numbers[0]}");
+    double j1 = double.Parse(result[0]);
+    List<string> znaki1 = new List<string>();
+    foreach (string znak in strings)
+    {
+        if (znak == "+" || znak == "-")
+        {
+            znaki1.Add(znak);
+        }
+    }
+    for (int i = 1; i < result.Length; i++)
+    {
+        if (znaki1[i - 1] == "+")
+        {
+            j1 = j1 + double.Parse(result[i]);
+        }
+        if (znaki1[i - 1] == "-")
+        {
+            j1 = j1 - double.Parse(result[i]);
+        }
+    }
+    Console.WriteLine($"Результат: {j1}");
+
+    //vyvod.Close();
+    //vvod1.Close();
 }
 catch (Exception ex)
 {
-    Console.WriteLine("Ошибка: " + ex.Message);
+    Console.WriteLine("ошибка");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//using Microsoft.VisualBasic;
-//using System;
-//using static System.Net.Mime.MediaTypeNames;
-////StreamWriter vvod = new StreamWriter("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod.txt");
-//Console.WriteLine("Введите математическое выражение: ");
-//string expression = Console.ReadLine();
-////vvod.Close();
-////StreamWriter vyvod = new StreamWriter("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vyvod.txt");
-////StreamReader vvod1 = new StreamReader("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod1.txt");
-//try
-//{
-//    expression = expression.Replace(" ", "");
-//    string highPriority = "*/";
-//    string lowPriority = "+-";
-//    string operatorChars = "^*/+-";
-//    List<int> operatorIndexes = new List<int>();
-//    int index = 0;
-//    foreach (char operators in expression)
-//    {
-//        if (operatorChars.Contains(operators))
-//        {
-//            operatorIndexes.Add(index);
-//            Console.WriteLine($"Оператор {operators} в индексе {index}");
-//        }
-//        index++;
-//    }
-
-
-
-
-
-
-//    string[] razdel = expression.Split(" ");
-//    int x = Convert.ToInt32(razdel[0]);
-//    int y = Convert.ToInt32(razdel[2]);
-
-//    string otvet = "Ответ: ";
-
-//    switch (razdel[1])
-//    {
-//        case "+": Console.WriteLine(otvet + (x + y)); break;
-//        case "-": Console.WriteLine(otvet + (x - y)); break;
-//        case "*": Console.WriteLine(otvet + (x * y)); break;
-//        case "/": Console.WriteLine(otvet + (x / y)); break;
-//    }
-
-//    //vyvod.Close();
-//    //vvod1.Close();
-//}
-//catch (Exception ex)
-//{
-//    Console.WriteLine("ошибка");
-//}
-
-//Console.ReadKey();
-
-////case "+": Console.WriteLine(otvet + (x + y)); vyvod.WriteLine(otvet + (x + y)); break;
-////case "-": Console.WriteLine(otvet + (x - y)); vyvod.WriteLine(otvet + (x - y)); break;
-////case "*": Console.WriteLine(otvet + (x * y)); vyvod.WriteLine(otvet + (x * y)); break;
-////case "/": Console.WriteLine(otvet + (x / y)); vyvod.WriteLine(otvet + (x / y)); break;
+Console.ReadKey();
