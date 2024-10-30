@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,8 +14,23 @@ string expression = Console.ReadLine();
 //StreamReader vvod1 = new StreamReader("C:/Users/irisp/source/repos/StringsMathExpressions/StringsMathExpressions/vvod1.txt");
 try
 {
+    string[] proverka = expression.Split(' ', '+', '-', '*', '/');
+    List<string> ProverkaZnaki = new List<string>();
+    for (int i = 0; i < expression.Length; i++)
+    {
+        if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*' || expression[i] == '/')
+        {
+            ProverkaZnaki.Add(expression.ToString());
+        }
+    }
+    if (ProverkaZnaki.Count() + 1 !=  proverka.Count())
+    {
+        throw new Exception("Ошибка. Пробел не может заменить знак операции");
+        return;
+    }
+
     expression = expression.Replace(" ", "");
-    string[] strings = expression.Split('+','-');
+    string[] strings = expression.Split('+', '-');
     string[] result = new string[strings.Length];
 
     for (int i = 0; i < strings.Length; i++)
@@ -77,6 +93,7 @@ try
     //vyvod.Close();
     //vvod1.Close();
 }
+
 catch (Exception ex)
 {
     Console.WriteLine("ошибка");

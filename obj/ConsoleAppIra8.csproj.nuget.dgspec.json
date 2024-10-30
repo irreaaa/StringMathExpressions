@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8\\ConsoleAppIra8.csproj": {}
+    "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8StringMathExpressions\\ConsoleAppIra8.csproj": {}
   },
   "projects": {
-    "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8\\ConsoleAppIra8.csproj": {
+    "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8StringMathExpressions\\ConsoleAppIra8.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8\\ConsoleAppIra8.csproj",
+        "projectUniqueName": "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8StringMathExpressions\\ConsoleAppIra8.csproj",
         "projectName": "ConsoleAppIra8",
-        "projectPath": "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8\\ConsoleAppIra8.csproj",
+        "projectPath": "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8StringMathExpressions\\ConsoleAppIra8.csproj",
         "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8\\obj\\",
+        "outputPath": "C:\\Users\\prdb\\source\\repos\\cbuvf\\ConsoleAppIra8StringMathExpressions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",

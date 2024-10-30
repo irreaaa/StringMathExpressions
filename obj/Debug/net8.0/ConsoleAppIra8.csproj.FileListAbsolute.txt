@@ -12,3 +12,17 @@ C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8\obj\Debug\net8.0\refint\ConsoleA
 C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8\obj\Debug\net8.0\ConsoleAppIra8.pdb
 C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8\obj\Debug\net8.0\ConsoleAppIra8.genruntimeconfig.cache
 C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8\obj\Debug\net8.0\ref\ConsoleAppIra8.dll
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\bin\Debug\net8.0\ConsoleAppIra8.exe
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\bin\Debug\net8.0\ConsoleAppIra8.deps.json
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\bin\Debug\net8.0\ConsoleAppIra8.runtimeconfig.json
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\bin\Debug\net8.0\ConsoleAppIra8.dll
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\bin\Debug\net8.0\ConsoleAppIra8.pdb
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.AssemblyInfoInputs.cache
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.AssemblyInfo.cs
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.csproj.CoreCompileInputs.cache
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.dll
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\refint\ConsoleAppIra8.dll
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.pdb
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ConsoleAppIra8.genruntimeconfig.cache
+C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\obj\Debug\net8.0\ref\ConsoleAppIra8.dll

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ConsoleAppIra8
-build_property.ProjectDir = C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8\
+build_property.ProjectDir = C:\Users\prdb\source\repos\cbuvf\ConsoleAppIra8StringMathExpressions\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
