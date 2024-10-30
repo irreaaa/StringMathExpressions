@@ -35,23 +35,23 @@ try
                 }
             }
 
-            double result1 = double.Parse(split[0]);
+            double result1 = Convert.ToDouble(split[0]);
             for (int j = 1; j < split.Length; j++)
             {
                 if (znaki[j - 1] == "*")
                 {
-                    result1 *= double.Parse(split[j]);
+                    result1 *= Convert.ToDouble(split[j]);
                 }
                 if (znaki[j - 1] == "/")
                 {
-                    result1 /= double.Parse(split[j]);
+                    result1 /= Convert.ToDouble(split[j]);
                 }
             }
             result[i] = result1.ToString();
         }
     }
 
-    double j1 = double.Parse(result[0]);
+    double j1 = Convert.ToDouble(result[0]);
     List<string> znaki1 = new List<string>();
     for (int i = 0; i < expression.Length; i++)
     {
@@ -65,11 +65,11 @@ try
     {
         if (znaki1[i - 1] == "+")
         {
-            j1 += double.Parse(result[i]);
+            j1 += Convert.ToDouble(result[i]);
         }
         if (znaki1[i - 1] == "-")
         {
-            j1 -= double.Parse(result[i]);
+            j1 -= Convert.ToDouble(result[i]);
         }
     }
     Console.WriteLine($"Результат: {j1}");
